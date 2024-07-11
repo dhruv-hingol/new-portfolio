@@ -1,23 +1,13 @@
-
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import { NextUIProvider } from "@nextui-org/react";
-import Navbar from "./navbar/Navbar"
-const inter = Inter({ subsets: ["latin"] });
+import { Metadata } from "next";
+import RootLayout from "./rootLayout"
 
 export const metadata: Metadata = {
-  title: "Portfolio",
-};
-
-export default function RootLayout({
+    title: "Portfolio",
+  };
+export default function AppLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body className={`${inter.className} light-theme`}><NextUIProvider><Navbar/>{children}</NextUIProvider></body>
-    </html>
-  );
+  return <RootLayout>{children}</RootLayout>;
 }
