@@ -2,32 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=WindSong:wght@500&display=swap");
+.light-theme {
+  --backgroundColor: #a9dce3;
+  --navbarColor: #d2d7da;
+  --cardColor: radial-gradient(
+      79.69% 102.24% at 100% 100.11%,
+      rgba(0, 0, 0, 0.2),
+      transparent
+    ),
+    radial-gradient(
+      89.7% 115.09% at 3.43% 2.75%,
+      hsla(0, 0%, 100%, 0.7),
+      hsla(0, 0%, 100%, 0)
+    ),
+    #99eedf;
+  --textColor: #000;
+  --brandColor: #183266;
+}
+.dark_theme {
+  --backgroundColor: #121212;
+  --navbarColor: #475157;
+  --cardColor: radial-gradient(
+      79.69% 102.24% at 100% 100.11%,
+      rgba(0, 0, 0, 0.2),
+      transparent
+    ),
+    radial-gradient(
+      89.7% 115.09% at 3.43% 2.75%,
+      rgba(50, 50, 50, 0.7),
+      hsla(0, 0%, 39%, 0.5)
+    ),
+    #a3a3a3;
+  --textColor: #fff;
+  --brandColor: #f16eb6;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+* {
+  font-family: "Poppins";
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins" !important;
+  background: var(--backgroundColor);
+  color: var(--textColor);
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.home-page-container {
+  background-color: var(--backgroundColor);
 }
